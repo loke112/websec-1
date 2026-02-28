@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="card" role="application" aria-label="Калькулятор">
+      <div class="row">
+        <input id="a" class="ctrl input" type="text" inputmode="decimal" autocomplete="off" value="123" aria-label="Первое число">
+        <select id="op" class="ctrl select" aria-label="Операция">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+        <input id="b" class="ctrl input" type="text" inputmode="decimal" autocomplete="off" value="567" aria-label="Второе число">
+      </div>
+
+      <div class="row center">
+        <button id="calc" class="ctrl btn" type="button">подсчитать</button>
+      </div>
+
+      <textarea id="out" class="ctrl output" rows="3" readonly aria-label="Результат"></textarea>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
