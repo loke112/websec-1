@@ -98,11 +98,11 @@ body{
   }
 
   .select{
-    width: 92px;     /* чтобы выглядело как на скрине */
+    width: 92px;     
     align-self: center;
   }
 
   .btn{
-    width: 220px;    /* кнопка как была */
+    width: 220px;    
   }
 }

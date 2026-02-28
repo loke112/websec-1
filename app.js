@@ -8,7 +8,6 @@ function normalizeNumberText(s) {
   return String(s).trim().replace(',', '.');
 }
 
-// Разрешаем: -12, 12, 12.34, .5, 0.5, -0.5
 function isValidNumberText(s) {
   const t = normalizeNumberText(s);
   if (t.length === 0) return false;
@@ -34,10 +33,8 @@ function compute(a, b, op) {
 }
 
 function formatResult(x) {
-  if (!Number.isFinite(x)) return String(x); // Infinity, -Infinity, NaN
-  // Уберём "-0"
-  if (Object.is(x, -0)) x = 0;
-  // Чуть аккуратнее с дробями
+  if (!Number.isFinite(x)) return String(x); 
+  if (Object.is(x, -0)) x = 0;  
   const s = String(x);
   if (s.includes('e')) return x.toPrecision(12).replace(/\.?0+$/,'');
   return s;
@@ -73,12 +70,10 @@ function run() {
 
 elBtn.addEventListener('click', run);
 
-// Удобство: Enter в любом поле запускает расчёт
 [elA, elB].forEach(el => {
   el.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') run();
   });
 });
 
-// Первый расчёт как на примере
 run();
